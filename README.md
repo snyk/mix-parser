@@ -6,3 +6,4 @@ Snyk helps you find, fix and monitor for known vulnerabilities in your dependenc
 
 ## Snyk Elixir's Mix Manifest (mix.exs) and Lockfile (mix.lock) Parser
 Given a JSON representation of the `mix.exs` and `mix.lock` files provided by [Snyk's Hex Plugin](https://github.com/snyk/snyk-hex-plugin), creates a [DepGraph](https://github.com/snyk/dep-graph) object. 
+
