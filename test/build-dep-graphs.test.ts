@@ -1,8 +1,8 @@
-import { buildDepGraph } from '../lib';
+import { buildDepGraphs } from '../lib';
 import { MixJsonResult } from '../lib/types';
 import { OutOfSyncError } from '../lib/out-of-sync-error';
 
-describe('buildDepGraph', () => {
+describe('buildDepGraphs', () => {
   describe('broken mix json result should throw', () => {
     const expectedError = /No manifest found/;
     verifyThrowsError('empty', {}, expectedError);
@@ -12,6 +12,7 @@ describe('buildDepGraph', () => {
   describe('fixtures', () => {
     verifyFixture('simple');
     verifyFixture('out-of-sync-top-level', 'all', false);
+    verifyFixture('umbrella', 'all', false);
 
     describe('out-of-sync-top-level should throw', () => {
       const mixJsonResult = require('./fixtures/out-of-sync-top-level/mix-result.json') as MixJsonResult;
@@ -51,12 +52,11 @@ function verifyFixture(
     for (const includeDev of includeDevOptions) {
       for (const strict of strictOptions) {
         it(`includeDev=${includeDev}, strict=${strict}`, () => {
-          const depGraph = buildDepGraph(
-            mixJsonResult,
-            includeDev,
-            strict,
-          ).toJSON();
-          expect(depGraph).toMatchSnapshot();
+          const depGraphs = buildDepGraphs(mixJsonResult, includeDev, strict);
+
+          for (const [key, depGraph] of Object.entries(depGraphs)) {
+            expect(depGraph).toMatchSnapshot(key);
+          }
         });
       }
     }
@@ -78,7 +78,7 @@ function verifyThrowsError(
     for (const strict of strictOptions) {
       it(`${name}, includeDev=${includeDev}, strict=${strict}`, () => {
         expect(() =>
-          buildDepGraph(mixJsonResult, includeDev, strict),
+          buildDepGraphs(mixJsonResult, includeDev, strict),
         ).toThrowError(error);
       });
     }

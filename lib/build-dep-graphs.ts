@@ -1,27 +1,31 @@
 import { DepGraph, DepGraphBuilder } from '@snyk/dep-graph';
-import { MixJsonResult, LockDepBase, LockDepMap } from './types';
+import {
+  MixJsonResult,
+  LockDepBase,
+  LockDepMap,
+  Manifest,
+  TopLevelDepsArr,
+} from './types';
 import { OutOfSyncError } from './out-of-sync-error';
 import { isDevDependency } from './is-dev-dependency';
 
 type NodeId = string;
+type ProjectId = 'root' | string;
 type Scope = 'dev' | 'prod';
+type DepGraphMap = Record<ProjectId, DepGraph>;
 
-export function buildDepGraph(
+export function buildDepGraphs(
   mixJsonResult: MixJsonResult,
   includeDev = false,
   strict = true,
-): DepGraph {
+): DepGraphMap {
   const manifest = mixJsonResult?.manifest;
   if (!manifest) throw new Error('No manifest found');
 
-  const builder = new DepGraphBuilder(
-    { name: 'hex' },
-    { name: manifest.app, version: manifest.version },
-  );
+  const lock = mixJsonResult.lock[0];
+  if (!lock) throw new Error('No lock file found');
 
-  if (!mixJsonResult.lock?.[0] || !manifest.deps) return builder.build();
-
-  const lockDepMap: LockDepMap = Object.entries(mixJsonResult.lock[0]).reduce(
+  const lockDepMap: LockDepMap = Object.entries(lock).reduce(
     (acc, [key, dep]) => {
       const [packageManager, name, version, hash, , dependencies] = dep;
 
@@ -37,9 +41,31 @@ export function buildDepGraph(
     {} as LockDepMap,
   );
 
-  const transitivesQueue: TransitiveQueueItem[] = [];
+  const projects = {
+    root: manifest,
+    ...(mixJsonResult.apps || {}),
+  };
 
-  for (const topLevelDep of manifest.deps || []) {
+  return Object.entries(projects).reduce((acc, [key, manifest]) => {
+    acc[key] = getDepGraph(manifest, includeDev, lockDepMap, strict);
+    return acc;
+  }, {} as DepGraphMap);
+}
+
+function getDepGraph(
+  manifest: Manifest,
+  includeDev: boolean,
+  lockDepMap: LockDepMap,
+  strict: boolean,
+): DepGraph {
+  const builder = new DepGraphBuilder({ name: 'hex' }, getRootPkg(manifest));
+
+  if (!manifest.deps) return builder.build();
+
+  const transitivesQueue: TransitiveQueueItem[] = [];
+  const deps = getTopLevelDeps(manifest);
+
+  for (const topLevelDep of deps) {
     // eslint-disable-next-line prefer-const
     let [depName, depVersionSpec, options] = topLevelDep;
     if (typeof depVersionSpec === 'object') {
@@ -49,14 +75,15 @@ export function buildDepGraph(
 
     const isDev = isDevDependency(options);
     if (!includeDev && isDev) continue;
-    const scope = isDev ? 'dev' : 'prod';
 
+    const scope = isDev ? 'dev' : 'prod';
     const parentNodeId = builder.rootNodeId;
 
     let dep: LockDepBase = lockDepMap[depName];
     let labels;
     if (!dep) {
-      if (strict) throw new OutOfSyncError(depName);
+      if (options?.in_umbrella) depVersionSpec = 'in_umbrella';
+      else if (strict) throw new OutOfSyncError(depName);
 
       labels = { missingLockFileEntry: 'true' };
       dep = { name: depName, version: depVersionSpec! };
@@ -99,6 +126,22 @@ export function buildDepGraph(
     builder.addPkgNode({ name, version }, nodeId, nodeInfo);
     return nodeId;
   }
+}
+
+function getRootPkg(manifest: Manifest) {
+  const name =
+    manifest.app ||
+    manifest.module_name?.replace(/\.Mix\w{4,}$/, '').toLowerCase() ||
+    'no_name';
+  return { name, version: manifest.version || '0.0.0' };
+}
+
+function getTopLevelDeps(manifest: Manifest): TopLevelDepsArr {
+  return Array.isArray(manifest.deps)
+    ? manifest.deps
+    : (Object.entries(manifest.deps).map(([key, value]) =>
+        Array.isArray(value) ? [key, ...value] : [key, value],
+      ) as TopLevelDepsArr);
 }
 
 type TransitiveQueueItem = {
