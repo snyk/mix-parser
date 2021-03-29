@@ -1,16 +1,22 @@
+type AppPath = string;
+
 export type MixJsonResult = {
-  manifest: {
-    app: string;
-    version: string;
-    elixir: string;
-    start_permanent: boolean;
-    deps: TopLevelDep[];
-    description: string;
-    package: any;
-    name: string;
-    module_name: string;
-  };
+  manifest: Manifest;
   lock: [Lock];
+  apps?: Record<AppPath, Manifest>;
+};
+
+export type Manifest = {
+  app: string;
+  version: string;
+  elixir: string;
+  start_permanent: boolean;
+  deps: TopLevelDeps;
+  description: string;
+  package: any;
+  name: string;
+  module_name: string;
+  apps_path?: string;
 };
 
 type Lock = Record<
@@ -93,4 +99,10 @@ export type TopLevelDepOptions = DependencyDefinitionOptions &
   GitOptions &
   PathOptions;
 
+type TopLevelDepsMap = Record<
+  DepName,
+  DepVersionSpec | TopLevelDepOptions | [DepVersionSpec?, TopLevelDepOptions?]
+>;
 type TopLevelDep = [DepName, DepVersionSpec?, TopLevelDepOptions?];
+export type TopLevelDepsArr = TopLevelDep[];
+type TopLevelDeps = TopLevelDepsArr | TopLevelDepsMap;

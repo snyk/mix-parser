@@ -1,3 +1,3 @@
-export { buildDepGraph } from './build-dep-graph';
+export { buildDepGraphs } from './build-dep-graphs';
 
 export { MixJsonResult } from './types';
