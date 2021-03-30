@@ -1427,7 +1427,7 @@ Object {
           },
         ],
         "nodeId": "root-node",
-        "pkgId": "api@0.1.0",
+        "pkgId": "sampleapp/apps/api@0.1.0",
       },
       Object {
         "deps": Array [],
@@ -1566,9 +1566,9 @@ Object {
   },
   "pkgs": Array [
     Object {
-      "id": "api@0.1.0",
+      "id": "sampleapp/apps/api@0.1.0",
       "info": Object {
-        "name": "api",
+        "name": "sampleapp/apps/api",
         "version": "0.1.0",
       },
     },
@@ -1670,7 +1670,7 @@ Object {
           },
         ],
         "nodeId": "root-node",
-        "pkgId": "core@0.1.0",
+        "pkgId": "sampleapp/apps/core@0.1.0",
       },
       Object {
         "deps": Array [
@@ -1821,9 +1821,9 @@ Object {
   },
   "pkgs": Array [
     Object {
-      "id": "core@0.1.0",
+      "id": "sampleapp/apps/core@0.1.0",
       "info": Object {
-        "name": "core",
+        "name": "sampleapp/apps/core",
         "version": "0.1.0",
       },
     },
@@ -1950,7 +1950,7 @@ Object {
           },
         ],
         "nodeId": "root-node",
-        "pkgId": "api@0.1.0",
+        "pkgId": "sampleapp/apps/api@0.1.0",
       },
       Object {
         "deps": Array [],
@@ -2089,9 +2089,9 @@ Object {
   },
   "pkgs": Array [
     Object {
-      "id": "api@0.1.0",
+      "id": "sampleapp/apps/api@0.1.0",
       "info": Object {
-        "name": "api",
+        "name": "sampleapp/apps/api",
         "version": "0.1.0",
       },
     },
@@ -2193,7 +2193,7 @@ Object {
           },
         ],
         "nodeId": "root-node",
-        "pkgId": "core@0.1.0",
+        "pkgId": "sampleapp/apps/core@0.1.0",
       },
       Object {
         "deps": Array [
@@ -2344,9 +2344,9 @@ Object {
   },
   "pkgs": Array [
     Object {
-      "id": "core@0.1.0",
+      "id": "sampleapp/apps/core@0.1.0",
       "info": Object {
-        "name": "core",
+        "name": "sampleapp/apps/core",
         "version": "0.1.0",
       },
     },
