@@ -46,19 +46,26 @@ export function buildDepGraphs(
     ...(mixJsonResult.apps || {}),
   };
 
+  const appsPrefix = `${getManifestName(manifest)}/${manifest.apps_path}/`;
+
   return Object.entries(projects).reduce((acc, [key, manifest]) => {
-    acc[key] = getDepGraph(manifest, includeDev, lockDepMap, strict);
+    const prefix = key === 'root' ? '' : appsPrefix;
+    acc[key] = getDepGraph(prefix, manifest, includeDev, lockDepMap, strict);
     return acc;
   }, {} as DepGraphMap);
 }
 
 function getDepGraph(
+  prefix: string,
   manifest: Manifest,
   includeDev: boolean,
   lockDepMap: LockDepMap,
   strict: boolean,
 ): DepGraph {
-  const builder = new DepGraphBuilder({ name: 'hex' }, getRootPkg(manifest));
+  const builder = new DepGraphBuilder(
+    { name: 'hex' },
+    getRootPkg(prefix, manifest),
+  );
 
   if (!manifest.deps) return builder.build();
 
@@ -128,12 +135,17 @@ function getDepGraph(
   }
 }
 
-function getRootPkg(manifest: Manifest) {
-  const name =
+function getRootPkg(prefix: string, manifest: Manifest) {
+  const name = getManifestName(manifest);
+  return { name: `${prefix}${name}`, version: manifest.version || '0.0.0' };
+}
+
+function getManifestName(manifest: Manifest) {
+  return (
     manifest.app ||
     manifest.module_name?.replace(/\.Mix\w{4,}$/, '').toLowerCase() ||
-    'no_name';
-  return { name, version: manifest.version || '0.0.0' };
+    'no_name'
+  );
 }
 
 function getTopLevelDeps(manifest: Manifest): TopLevelDepsArr {
