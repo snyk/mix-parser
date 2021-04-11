@@ -4,6 +4,7 @@ export type MixJsonResult = {
   manifest: Manifest;
   lock: [Lock];
   apps?: Record<AppPath, Manifest>;
+  parent_umbrella_manifest?: Manifest;
 };
 
 export type Manifest = {
