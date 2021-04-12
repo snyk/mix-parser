@@ -12,7 +12,8 @@ describe('buildDepGraphs', () => {
   describe('fixtures', () => {
     verifyFixture('simple');
     verifyFixture('out-of-sync-top-level', 'all', false);
-    verifyFixture('umbrella', 'all', false);
+    verifyFixture('umbrella', 'all', false, 'all');
+    verifyFixture('umbrella/apps/api', true, false);
 
     describe('out-of-sync-top-level should throw', () => {
       const mixJsonResult = require('./fixtures/out-of-sync-top-level/mix-result.json') as MixJsonResult;
@@ -42,22 +43,32 @@ function verifyFixture(
   name: string,
   includeDev: BoolOptions = 'all',
   strict: BoolOptions = 'all',
+  allProjects: BoolOptions = false,
 ) {
   const includeDevOptions =
     includeDev === 'all' ? [true, false] : [includeDev as boolean];
   const strictOptions = strict === 'all' ? [true, false] : [strict as boolean];
+  const allProjectsOptions =
+    allProjects === 'all' ? [true, false] : [allProjects as boolean];
 
   describe(name, () => {
     const mixJsonResult = require(`./fixtures/${name}/mix-result.json`) as MixJsonResult;
     for (const includeDev of includeDevOptions) {
       for (const strict of strictOptions) {
-        it(`includeDev=${includeDev}, strict=${strict}`, () => {
-          const depGraphs = buildDepGraphs(mixJsonResult, includeDev, strict);
+        for (const allProjects of allProjectsOptions) {
+          it(`includeDev=${includeDev}, strict=${strict}, allProjects=${allProjects}`, () => {
+            const depGraphs = buildDepGraphs(
+              mixJsonResult,
+              includeDev,
+              strict,
+              allProjects,
+            );
 
-          for (const [key, depGraph] of Object.entries(depGraphs)) {
-            expect(depGraph).toMatchSnapshot(key);
-          }
-        });
+            for (const [key, depGraph] of Object.entries(depGraphs)) {
+              expect(depGraph).toMatchSnapshot(key);
+            }
+          });
+        }
       }
     }
   });

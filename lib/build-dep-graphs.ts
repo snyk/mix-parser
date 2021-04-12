@@ -18,6 +18,7 @@ export function buildDepGraphs(
   mixJsonResult: MixJsonResult,
   includeDev = false,
   strict = true,
+  allProjects = false,
 ): DepGraphMap {
   const manifest = mixJsonResult?.manifest;
   if (!manifest) throw new Error('No manifest found');
@@ -41,10 +42,20 @@ export function buildDepGraphs(
     {} as LockDepMap,
   );
 
-  const projects = {
-    root: manifest,
-    ...(mixJsonResult.apps || {}),
-  };
+  if (mixJsonResult.parent_umbrella_manifest) {
+    const umbrella = mixJsonResult.parent_umbrella_manifest;
+    const prefix = `${getManifestName(umbrella)}/${umbrella.apps_path}/`;
+    const name = `${umbrella.apps_path}/${getManifestName(manifest)}`;
+
+    return {
+      [name]: getDepGraph(prefix, manifest, includeDev, lockDepMap, strict),
+    };
+  }
+
+  const apps =
+    allProjects || isEmpty(mixJsonResult.apps) ? {} : mixJsonResult.apps;
+
+  const projects = { root: manifest, ...apps };
 
   const appsPrefix = `${getManifestName(manifest)}/${manifest.apps_path}/`;
 
@@ -53,6 +64,10 @@ export function buildDepGraphs(
     acc[key] = getDepGraph(prefix, manifest, includeDev, lockDepMap, strict);
     return acc;
   }, {} as DepGraphMap);
+}
+
+function isEmpty(obj?: any) {
+  return !obj || Object.keys(obj).length === 0;
 }
 
 function getDepGraph(
