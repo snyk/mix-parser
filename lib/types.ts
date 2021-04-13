@@ -81,7 +81,7 @@ type DependencyDefinitionOptions = {
   system_env?: boolean;
 };
 
-type GitOptions = {
+export type GitOptions = {
   git?: string;
   github?: string;
   ref?: string;
@@ -91,7 +91,7 @@ type GitOptions = {
   sparse?: string;
 };
 
-type PathOptions = {
+export type PathOptions = {
   path?: string;
   in_umbrella?: boolean;
 };

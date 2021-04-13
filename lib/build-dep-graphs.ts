@@ -8,6 +8,7 @@ import {
 } from './types';
 import { OutOfSyncError } from './out-of-sync-error';
 import { isDevDependency } from './is-dev-dependency';
+import { getNonHexVersion } from './get-non-hex-version';
 
 type NodeId = string;
 type ProjectId = 'root' | string;
@@ -104,11 +105,14 @@ function getDepGraph(
     let dep: LockDepBase = lockDepMap[depName];
     let labels;
     if (!dep) {
-      if (options?.in_umbrella) depVersionSpec = 'in_umbrella';
-      else if (strict) throw new OutOfSyncError(depName);
+      const nonHexVersion = getNonHexVersion(options);
+      if (!nonHexVersion && strict) throw new OutOfSyncError(depName);
 
-      labels = { missingLockFileEntry: 'true' };
-      dep = { name: depName, version: depVersionSpec! };
+      labels = {
+        missingLockFileEntry: 'true',
+        ...(nonHexVersion?.labels || {}),
+      };
+      dep = { name: depName, version: nonHexVersion?.title || depVersionSpec! };
     }
 
     transitivesQueue.push({ dep, parentNodeId, scope, labels });

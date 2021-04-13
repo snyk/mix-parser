@@ -14,6 +14,7 @@ describe('buildDepGraphs', () => {
     verifyFixture('out-of-sync-top-level', 'all', false);
     verifyFixture('umbrella', 'all', false, 'all');
     verifyFixture('umbrella/apps/api', true, false);
+    verifyFixture('non-hex', false, 'all');
 
     describe('out-of-sync-top-level should throw', () => {
       const mixJsonResult = require('./fixtures/out-of-sync-top-level/mix-result.json') as MixJsonResult;
