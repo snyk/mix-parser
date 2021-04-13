@@ -1,5 +1,257 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`buildDepGraphs fixtures non-hex includeDev=false, strict=false, allProjects=false: root 1`] = `
+Object {
+  "graph": Object {
+    "nodes": Array [
+      Object {
+        "deps": Array [
+          Object {
+            "nodeId": "umbrella_pkg@in_umbrella",
+          },
+          Object {
+            "nodeId": "path_pkg@path",
+          },
+          Object {
+            "nodeId": "git_pkg@git",
+          },
+          Object {
+            "nodeId": "github_pkg@github",
+          },
+        ],
+        "nodeId": "root-node",
+        "pkgId": "nonhex@0.0.1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "umbrella_pkg@in_umbrella",
+        "pkgId": "umbrella_pkg@in_umbrella",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "missingLockFileEntry": "true",
+            "path": "../some_path",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "path_pkg@path",
+        "pkgId": "path_pkg@path",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "ref": "ref1",
+            "scope": "prod",
+            "sparse": "sparse1",
+            "submodules": "submodules1",
+            "tag": "0.1",
+          },
+        },
+        "nodeId": "git_pkg@git",
+        "pkgId": "git_pkg@git",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch2",
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "ref": "ref2",
+            "scope": "prod",
+            "sparse": "sparse2",
+            "submodules": "submodules2",
+            "tag": "0.2",
+          },
+        },
+        "nodeId": "github_pkg@github",
+        "pkgId": "github_pkg@github",
+      },
+    ],
+    "rootNodeId": "root-node",
+  },
+  "pkgManager": Object {
+    "name": "hex",
+  },
+  "pkgs": Array [
+    Object {
+      "id": "nonhex@0.0.1",
+      "info": Object {
+        "name": "nonhex",
+        "version": "0.0.1",
+      },
+    },
+    Object {
+      "id": "umbrella_pkg@in_umbrella",
+      "info": Object {
+        "name": "umbrella_pkg",
+        "version": "in_umbrella",
+      },
+    },
+    Object {
+      "id": "path_pkg@path",
+      "info": Object {
+        "name": "path_pkg",
+        "version": "path",
+      },
+    },
+    Object {
+      "id": "git_pkg@git",
+      "info": Object {
+        "name": "git_pkg",
+        "version": "git",
+      },
+    },
+    Object {
+      "id": "github_pkg@github",
+      "info": Object {
+        "name": "github_pkg",
+        "version": "github",
+      },
+    },
+  ],
+  "schemaVersion": "1.2.0",
+}
+`;
+
+exports[`buildDepGraphs fixtures non-hex includeDev=false, strict=true, allProjects=false: root 1`] = `
+Object {
+  "graph": Object {
+    "nodes": Array [
+      Object {
+        "deps": Array [
+          Object {
+            "nodeId": "umbrella_pkg@in_umbrella",
+          },
+          Object {
+            "nodeId": "path_pkg@path",
+          },
+          Object {
+            "nodeId": "git_pkg@git",
+          },
+          Object {
+            "nodeId": "github_pkg@github",
+          },
+        ],
+        "nodeId": "root-node",
+        "pkgId": "nonhex@0.0.1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "umbrella_pkg@in_umbrella",
+        "pkgId": "umbrella_pkg@in_umbrella",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "missingLockFileEntry": "true",
+            "path": "../some_path",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "path_pkg@path",
+        "pkgId": "path_pkg@path",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "ref": "ref1",
+            "scope": "prod",
+            "sparse": "sparse1",
+            "submodules": "submodules1",
+            "tag": "0.1",
+          },
+        },
+        "nodeId": "git_pkg@git",
+        "pkgId": "git_pkg@git",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch2",
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "ref": "ref2",
+            "scope": "prod",
+            "sparse": "sparse2",
+            "submodules": "submodules2",
+            "tag": "0.2",
+          },
+        },
+        "nodeId": "github_pkg@github",
+        "pkgId": "github_pkg@github",
+      },
+    ],
+    "rootNodeId": "root-node",
+  },
+  "pkgManager": Object {
+    "name": "hex",
+  },
+  "pkgs": Array [
+    Object {
+      "id": "nonhex@0.0.1",
+      "info": Object {
+        "name": "nonhex",
+        "version": "0.0.1",
+      },
+    },
+    Object {
+      "id": "umbrella_pkg@in_umbrella",
+      "info": Object {
+        "name": "umbrella_pkg",
+        "version": "in_umbrella",
+      },
+    },
+    Object {
+      "id": "path_pkg@path",
+      "info": Object {
+        "name": "path_pkg",
+        "version": "path",
+      },
+    },
+    Object {
+      "id": "git_pkg@git",
+      "info": Object {
+        "name": "git_pkg",
+        "version": "git",
+      },
+    },
+    Object {
+      "id": "github_pkg@github",
+      "info": Object {
+        "name": "github_pkg",
+        "version": "github",
+      },
+    },
+  ],
+  "schemaVersion": "1.2.0",
+}
+`;
+
 exports[`buildDepGraphs fixtures out-of-sync-top-level includeDev=false, strict=false, allProjects=false: root 1`] = `
 Object {
   "graph": Object {
