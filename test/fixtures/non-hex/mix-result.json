@@ -16,21 +16,51 @@
       "path_pkg": {
         "path": "../some_path"
       },
-      "git_pkg": {
+      "git_tag": {
         "git": "https://github.com/elixir-lang/gettext.git",
-        "tag": "0.1",
-        "ref": "ref1",
-        "branch": "branch1",
-        "submodules": "submodules1",
+        "tag": "0.1"
+      },
+      "git_ref": {
+        "git": "https://github.com/elixir-lang/gettext.git",
+        "ref": "ref1"
+      },
+      "git_branch": {
+        "git": "https://github.com/elixir-lang/gettext.git",
+        "branch": "branch1"
+      },
+      "git_submodules": {
+        "git": "https://github.com/elixir-lang/gettext.git",
+        "submodules": "submodules1"
+      },
+      "git_sparse": {
+        "git": "https://github.com/elixir-lang/gettext.git",
         "sparse": "sparse1"
       },
-      "github_pkg": {
+      "git_none": {
+        "git": "https://github.com/elixir-lang/gettext.git"
+      },
+      "github_tag": {
         "github": "org/repo",
-        "tag": "0.2",
-        "ref": "ref2",
-        "branch": "branch2",
-        "submodules": "submodules2",
-        "sparse": "sparse2"
+        "tag": "0.1"
+      },
+      "github_ref": {
+        "github": "org/repo",
+        "ref": "ref1"
+      },
+      "github_branch": {
+        "github": "org/repo",
+        "branch": "branch1"
+      },
+      "github_submodules": {
+        "github": "org/repo",
+        "submodules": "submodules1"
+      },
+      "github_sparse": {
+        "github": "org/repo",
+        "sparse": "sparse1"
+      },
+      "github_none": {
+        "github": "org/repo"
       }
     },
     "module_name": "NonHex.MixProject"
