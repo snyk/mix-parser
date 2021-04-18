@@ -42,7 +42,11 @@ function hasGitOptionProps(
 }
 
 function generateGitDepVersion(options: GitOptions): HexVersion {
-  const title = options.github ? 'github' : 'git';
+  const gitAddress = options.github
+    ? `https://github.com/${options.github}`
+    : options.git;
+  const ref = options.branch || options.tag || options.ref || 'HEAD';
+  const title = `${gitAddress}@${ref}`;
   const labels = {} as any;
 
   for (const prop of GIT_OPTION_PROPS) {

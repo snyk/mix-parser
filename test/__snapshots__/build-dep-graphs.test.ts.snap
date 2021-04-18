@@ -13,10 +13,40 @@ Object {
             "nodeId": "path_pkg@path",
           },
           Object {
-            "nodeId": "git_pkg@git",
+            "nodeId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
           },
           Object {
-            "nodeId": "github_pkg@github",
+            "nodeId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+          },
+          Object {
+            "nodeId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+          },
+          Object {
+            "nodeId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "github_tag@https://github.com/org/repo@0.1",
+          },
+          Object {
+            "nodeId": "github_ref@https://github.com/org/repo@ref1",
+          },
+          Object {
+            "nodeId": "github_branch@https://github.com/org/repo@branch1",
+          },
+          Object {
+            "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+          },
+          Object {
+            "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+          },
+          Object {
+            "nodeId": "github_none@https://github.com/org/repo@HEAD",
           },
         ],
         "nodeId": "root-node",
@@ -49,35 +79,155 @@ Object {
         "deps": Array [],
         "info": Object {
           "labels": Object {
-            "branch": "branch1",
             "git": "https://github.com/elixir-lang/gettext.git",
             "missingLockFileEntry": "true",
-            "ref": "ref1",
             "scope": "prod",
-            "sparse": "sparse1",
-            "submodules": "submodules1",
             "tag": "0.1",
           },
         },
-        "nodeId": "git_pkg@git",
-        "pkgId": "git_pkg@git",
+        "nodeId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
+        "pkgId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
       },
       Object {
         "deps": Array [],
         "info": Object {
           "labels": Object {
-            "branch": "branch2",
-            "github": "org/repo",
+            "git": "https://github.com/elixir-lang/gettext.git",
             "missingLockFileEntry": "true",
-            "ref": "ref2",
+            "ref": "ref1",
             "scope": "prod",
-            "sparse": "sparse2",
-            "submodules": "submodules2",
-            "tag": "0.2",
           },
         },
-        "nodeId": "github_pkg@github",
-        "pkgId": "github_pkg@github",
+        "nodeId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+        "pkgId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+        "pkgId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "submodules": "submodules1",
+          },
+        },
+        "nodeId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "sparse": "sparse1",
+          },
+        },
+        "nodeId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "tag": "0.1",
+          },
+        },
+        "nodeId": "github_tag@https://github.com/org/repo@0.1",
+        "pkgId": "github_tag@https://github.com/org/repo@0.1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "ref": "ref1",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_ref@https://github.com/org/repo@ref1",
+        "pkgId": "github_ref@https://github.com/org/repo@ref1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_branch@https://github.com/org/repo@branch1",
+        "pkgId": "github_branch@https://github.com/org/repo@branch1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "submodules": "submodules1",
+          },
+        },
+        "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+        "pkgId": "github_submodules@https://github.com/org/repo@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "sparse": "sparse1",
+          },
+        },
+        "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+        "pkgId": "github_sparse@https://github.com/org/repo@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_none@https://github.com/org/repo@HEAD",
+        "pkgId": "github_none@https://github.com/org/repo@HEAD",
       },
     ],
     "rootNodeId": "root-node",
@@ -108,17 +258,87 @@ Object {
       },
     },
     Object {
-      "id": "git_pkg@git",
+      "id": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
       "info": Object {
-        "name": "git_pkg",
-        "version": "git",
+        "name": "git_tag",
+        "version": "https://github.com/elixir-lang/gettext.git@0.1",
       },
     },
     Object {
-      "id": "github_pkg@github",
+      "id": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
       "info": Object {
-        "name": "github_pkg",
-        "version": "github",
+        "name": "git_ref",
+        "version": "https://github.com/elixir-lang/gettext.git@ref1",
+      },
+    },
+    Object {
+      "id": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+      "info": Object {
+        "name": "git_branch",
+        "version": "https://github.com/elixir-lang/gettext.git@branch1",
+      },
+    },
+    Object {
+      "id": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_submodules",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_sparse",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_none",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "github_tag@https://github.com/org/repo@0.1",
+      "info": Object {
+        "name": "github_tag",
+        "version": "https://github.com/org/repo@0.1",
+      },
+    },
+    Object {
+      "id": "github_ref@https://github.com/org/repo@ref1",
+      "info": Object {
+        "name": "github_ref",
+        "version": "https://github.com/org/repo@ref1",
+      },
+    },
+    Object {
+      "id": "github_branch@https://github.com/org/repo@branch1",
+      "info": Object {
+        "name": "github_branch",
+        "version": "https://github.com/org/repo@branch1",
+      },
+    },
+    Object {
+      "id": "github_submodules@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_submodules",
+        "version": "https://github.com/org/repo@HEAD",
+      },
+    },
+    Object {
+      "id": "github_sparse@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_sparse",
+        "version": "https://github.com/org/repo@HEAD",
+      },
+    },
+    Object {
+      "id": "github_none@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_none",
+        "version": "https://github.com/org/repo@HEAD",
       },
     },
   ],
@@ -139,10 +359,40 @@ Object {
             "nodeId": "path_pkg@path",
           },
           Object {
-            "nodeId": "git_pkg@git",
+            "nodeId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
           },
           Object {
-            "nodeId": "github_pkg@github",
+            "nodeId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+          },
+          Object {
+            "nodeId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+          },
+          Object {
+            "nodeId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+          },
+          Object {
+            "nodeId": "github_tag@https://github.com/org/repo@0.1",
+          },
+          Object {
+            "nodeId": "github_ref@https://github.com/org/repo@ref1",
+          },
+          Object {
+            "nodeId": "github_branch@https://github.com/org/repo@branch1",
+          },
+          Object {
+            "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+          },
+          Object {
+            "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+          },
+          Object {
+            "nodeId": "github_none@https://github.com/org/repo@HEAD",
           },
         ],
         "nodeId": "root-node",
@@ -175,35 +425,155 @@ Object {
         "deps": Array [],
         "info": Object {
           "labels": Object {
-            "branch": "branch1",
             "git": "https://github.com/elixir-lang/gettext.git",
             "missingLockFileEntry": "true",
-            "ref": "ref1",
             "scope": "prod",
-            "sparse": "sparse1",
-            "submodules": "submodules1",
             "tag": "0.1",
           },
         },
-        "nodeId": "git_pkg@git",
-        "pkgId": "git_pkg@git",
+        "nodeId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
+        "pkgId": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
       },
       Object {
         "deps": Array [],
         "info": Object {
           "labels": Object {
-            "branch": "branch2",
-            "github": "org/repo",
+            "git": "https://github.com/elixir-lang/gettext.git",
             "missingLockFileEntry": "true",
-            "ref": "ref2",
+            "ref": "ref1",
             "scope": "prod",
-            "sparse": "sparse2",
-            "submodules": "submodules2",
-            "tag": "0.2",
           },
         },
-        "nodeId": "github_pkg@github",
-        "pkgId": "github_pkg@github",
+        "nodeId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+        "pkgId": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+        "pkgId": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "submodules": "submodules1",
+          },
+        },
+        "nodeId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "sparse": "sparse1",
+          },
+        },
+        "nodeId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "git": "https://github.com/elixir-lang/gettext.git",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+        "pkgId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "tag": "0.1",
+          },
+        },
+        "nodeId": "github_tag@https://github.com/org/repo@0.1",
+        "pkgId": "github_tag@https://github.com/org/repo@0.1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "ref": "ref1",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_ref@https://github.com/org/repo@ref1",
+        "pkgId": "github_ref@https://github.com/org/repo@ref1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "branch": "branch1",
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_branch@https://github.com/org/repo@branch1",
+        "pkgId": "github_branch@https://github.com/org/repo@branch1",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "submodules": "submodules1",
+          },
+        },
+        "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+        "pkgId": "github_submodules@https://github.com/org/repo@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+            "sparse": "sparse1",
+          },
+        },
+        "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+        "pkgId": "github_sparse@https://github.com/org/repo@HEAD",
+      },
+      Object {
+        "deps": Array [],
+        "info": Object {
+          "labels": Object {
+            "github": "org/repo",
+            "missingLockFileEntry": "true",
+            "scope": "prod",
+          },
+        },
+        "nodeId": "github_none@https://github.com/org/repo@HEAD",
+        "pkgId": "github_none@https://github.com/org/repo@HEAD",
       },
     ],
     "rootNodeId": "root-node",
@@ -234,17 +604,87 @@ Object {
       },
     },
     Object {
-      "id": "git_pkg@git",
+      "id": "git_tag@https://github.com/elixir-lang/gettext.git@0.1",
       "info": Object {
-        "name": "git_pkg",
-        "version": "git",
+        "name": "git_tag",
+        "version": "https://github.com/elixir-lang/gettext.git@0.1",
       },
     },
     Object {
-      "id": "github_pkg@github",
+      "id": "git_ref@https://github.com/elixir-lang/gettext.git@ref1",
       "info": Object {
-        "name": "github_pkg",
-        "version": "github",
+        "name": "git_ref",
+        "version": "https://github.com/elixir-lang/gettext.git@ref1",
+      },
+    },
+    Object {
+      "id": "git_branch@https://github.com/elixir-lang/gettext.git@branch1",
+      "info": Object {
+        "name": "git_branch",
+        "version": "https://github.com/elixir-lang/gettext.git@branch1",
+      },
+    },
+    Object {
+      "id": "git_submodules@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_submodules",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "git_sparse@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_sparse",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
+      "info": Object {
+        "name": "git_none",
+        "version": "https://github.com/elixir-lang/gettext.git@HEAD",
+      },
+    },
+    Object {
+      "id": "github_tag@https://github.com/org/repo@0.1",
+      "info": Object {
+        "name": "github_tag",
+        "version": "https://github.com/org/repo@0.1",
+      },
+    },
+    Object {
+      "id": "github_ref@https://github.com/org/repo@ref1",
+      "info": Object {
+        "name": "github_ref",
+        "version": "https://github.com/org/repo@ref1",
+      },
+    },
+    Object {
+      "id": "github_branch@https://github.com/org/repo@branch1",
+      "info": Object {
+        "name": "github_branch",
+        "version": "https://github.com/org/repo@branch1",
+      },
+    },
+    Object {
+      "id": "github_submodules@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_submodules",
+        "version": "https://github.com/org/repo@HEAD",
+      },
+    },
+    Object {
+      "id": "github_sparse@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_sparse",
+        "version": "https://github.com/org/repo@HEAD",
+      },
+    },
+    Object {
+      "id": "github_none@https://github.com/org/repo@HEAD",
+      "info": Object {
+        "name": "github_none",
+        "version": "https://github.com/org/repo@HEAD",
       },
     },
   ],
