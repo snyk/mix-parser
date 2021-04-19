@@ -31,22 +31,22 @@ Object {
             "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
           },
           Object {
-            "nodeId": "github_tag@https://github.com/org/repo@0.1",
+            "nodeId": "github_tag@https://github.com/org/repo.git@0.1",
           },
           Object {
-            "nodeId": "github_ref@https://github.com/org/repo@ref1",
+            "nodeId": "github_ref@https://github.com/org/repo.git@ref1",
           },
           Object {
-            "nodeId": "github_branch@https://github.com/org/repo@branch1",
+            "nodeId": "github_branch@https://github.com/org/repo.git@branch1",
           },
           Object {
-            "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+            "nodeId": "github_submodules@https://github.com/org/repo.git@HEAD",
           },
           Object {
-            "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+            "nodeId": "github_sparse@https://github.com/org/repo.git@HEAD",
           },
           Object {
-            "nodeId": "github_none@https://github.com/org/repo@HEAD",
+            "nodeId": "github_none@https://github.com/org/repo.git@HEAD",
           },
         ],
         "nodeId": "root-node",
@@ -162,8 +162,8 @@ Object {
             "tag": "0.1",
           },
         },
-        "nodeId": "github_tag@https://github.com/org/repo@0.1",
-        "pkgId": "github_tag@https://github.com/org/repo@0.1",
+        "nodeId": "github_tag@https://github.com/org/repo.git@0.1",
+        "pkgId": "github_tag@https://github.com/org/repo.git@0.1",
       },
       Object {
         "deps": Array [],
@@ -175,8 +175,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_ref@https://github.com/org/repo@ref1",
-        "pkgId": "github_ref@https://github.com/org/repo@ref1",
+        "nodeId": "github_ref@https://github.com/org/repo.git@ref1",
+        "pkgId": "github_ref@https://github.com/org/repo.git@ref1",
       },
       Object {
         "deps": Array [],
@@ -188,8 +188,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_branch@https://github.com/org/repo@branch1",
-        "pkgId": "github_branch@https://github.com/org/repo@branch1",
+        "nodeId": "github_branch@https://github.com/org/repo.git@branch1",
+        "pkgId": "github_branch@https://github.com/org/repo.git@branch1",
       },
       Object {
         "deps": Array [],
@@ -201,8 +201,8 @@ Object {
             "submodules": "submodules1",
           },
         },
-        "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
-        "pkgId": "github_submodules@https://github.com/org/repo@HEAD",
+        "nodeId": "github_submodules@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_submodules@https://github.com/org/repo.git@HEAD",
       },
       Object {
         "deps": Array [],
@@ -214,8 +214,8 @@ Object {
             "sparse": "sparse1",
           },
         },
-        "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
-        "pkgId": "github_sparse@https://github.com/org/repo@HEAD",
+        "nodeId": "github_sparse@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_sparse@https://github.com/org/repo.git@HEAD",
       },
       Object {
         "deps": Array [],
@@ -226,8 +226,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_none@https://github.com/org/repo@HEAD",
-        "pkgId": "github_none@https://github.com/org/repo@HEAD",
+        "nodeId": "github_none@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_none@https://github.com/org/repo.git@HEAD",
       },
     ],
     "rootNodeId": "root-node",
@@ -300,45 +300,45 @@ Object {
       },
     },
     Object {
-      "id": "github_tag@https://github.com/org/repo@0.1",
+      "id": "github_tag@https://github.com/org/repo.git@0.1",
       "info": Object {
         "name": "github_tag",
-        "version": "https://github.com/org/repo@0.1",
+        "version": "https://github.com/org/repo.git@0.1",
       },
     },
     Object {
-      "id": "github_ref@https://github.com/org/repo@ref1",
+      "id": "github_ref@https://github.com/org/repo.git@ref1",
       "info": Object {
         "name": "github_ref",
-        "version": "https://github.com/org/repo@ref1",
+        "version": "https://github.com/org/repo.git@ref1",
       },
     },
     Object {
-      "id": "github_branch@https://github.com/org/repo@branch1",
+      "id": "github_branch@https://github.com/org/repo.git@branch1",
       "info": Object {
         "name": "github_branch",
-        "version": "https://github.com/org/repo@branch1",
+        "version": "https://github.com/org/repo.git@branch1",
       },
     },
     Object {
-      "id": "github_submodules@https://github.com/org/repo@HEAD",
+      "id": "github_submodules@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_submodules",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
     Object {
-      "id": "github_sparse@https://github.com/org/repo@HEAD",
+      "id": "github_sparse@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_sparse",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
     Object {
-      "id": "github_none@https://github.com/org/repo@HEAD",
+      "id": "github_none@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_none",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
   ],
@@ -377,22 +377,22 @@ Object {
             "nodeId": "git_none@https://github.com/elixir-lang/gettext.git@HEAD",
           },
           Object {
-            "nodeId": "github_tag@https://github.com/org/repo@0.1",
+            "nodeId": "github_tag@https://github.com/org/repo.git@0.1",
           },
           Object {
-            "nodeId": "github_ref@https://github.com/org/repo@ref1",
+            "nodeId": "github_ref@https://github.com/org/repo.git@ref1",
           },
           Object {
-            "nodeId": "github_branch@https://github.com/org/repo@branch1",
+            "nodeId": "github_branch@https://github.com/org/repo.git@branch1",
           },
           Object {
-            "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
+            "nodeId": "github_submodules@https://github.com/org/repo.git@HEAD",
           },
           Object {
-            "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
+            "nodeId": "github_sparse@https://github.com/org/repo.git@HEAD",
           },
           Object {
-            "nodeId": "github_none@https://github.com/org/repo@HEAD",
+            "nodeId": "github_none@https://github.com/org/repo.git@HEAD",
           },
         ],
         "nodeId": "root-node",
@@ -508,8 +508,8 @@ Object {
             "tag": "0.1",
           },
         },
-        "nodeId": "github_tag@https://github.com/org/repo@0.1",
-        "pkgId": "github_tag@https://github.com/org/repo@0.1",
+        "nodeId": "github_tag@https://github.com/org/repo.git@0.1",
+        "pkgId": "github_tag@https://github.com/org/repo.git@0.1",
       },
       Object {
         "deps": Array [],
@@ -521,8 +521,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_ref@https://github.com/org/repo@ref1",
-        "pkgId": "github_ref@https://github.com/org/repo@ref1",
+        "nodeId": "github_ref@https://github.com/org/repo.git@ref1",
+        "pkgId": "github_ref@https://github.com/org/repo.git@ref1",
       },
       Object {
         "deps": Array [],
@@ -534,8 +534,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_branch@https://github.com/org/repo@branch1",
-        "pkgId": "github_branch@https://github.com/org/repo@branch1",
+        "nodeId": "github_branch@https://github.com/org/repo.git@branch1",
+        "pkgId": "github_branch@https://github.com/org/repo.git@branch1",
       },
       Object {
         "deps": Array [],
@@ -547,8 +547,8 @@ Object {
             "submodules": "submodules1",
           },
         },
-        "nodeId": "github_submodules@https://github.com/org/repo@HEAD",
-        "pkgId": "github_submodules@https://github.com/org/repo@HEAD",
+        "nodeId": "github_submodules@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_submodules@https://github.com/org/repo.git@HEAD",
       },
       Object {
         "deps": Array [],
@@ -560,8 +560,8 @@ Object {
             "sparse": "sparse1",
           },
         },
-        "nodeId": "github_sparse@https://github.com/org/repo@HEAD",
-        "pkgId": "github_sparse@https://github.com/org/repo@HEAD",
+        "nodeId": "github_sparse@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_sparse@https://github.com/org/repo.git@HEAD",
       },
       Object {
         "deps": Array [],
@@ -572,8 +572,8 @@ Object {
             "scope": "prod",
           },
         },
-        "nodeId": "github_none@https://github.com/org/repo@HEAD",
-        "pkgId": "github_none@https://github.com/org/repo@HEAD",
+        "nodeId": "github_none@https://github.com/org/repo.git@HEAD",
+        "pkgId": "github_none@https://github.com/org/repo.git@HEAD",
       },
     ],
     "rootNodeId": "root-node",
@@ -646,45 +646,45 @@ Object {
       },
     },
     Object {
-      "id": "github_tag@https://github.com/org/repo@0.1",
+      "id": "github_tag@https://github.com/org/repo.git@0.1",
       "info": Object {
         "name": "github_tag",
-        "version": "https://github.com/org/repo@0.1",
+        "version": "https://github.com/org/repo.git@0.1",
       },
     },
     Object {
-      "id": "github_ref@https://github.com/org/repo@ref1",
+      "id": "github_ref@https://github.com/org/repo.git@ref1",
       "info": Object {
         "name": "github_ref",
-        "version": "https://github.com/org/repo@ref1",
+        "version": "https://github.com/org/repo.git@ref1",
       },
     },
     Object {
-      "id": "github_branch@https://github.com/org/repo@branch1",
+      "id": "github_branch@https://github.com/org/repo.git@branch1",
       "info": Object {
         "name": "github_branch",
-        "version": "https://github.com/org/repo@branch1",
+        "version": "https://github.com/org/repo.git@branch1",
       },
     },
     Object {
-      "id": "github_submodules@https://github.com/org/repo@HEAD",
+      "id": "github_submodules@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_submodules",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
     Object {
-      "id": "github_sparse@https://github.com/org/repo@HEAD",
+      "id": "github_sparse@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_sparse",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
     Object {
-      "id": "github_none@https://github.com/org/repo@HEAD",
+      "id": "github_none@https://github.com/org/repo.git@HEAD",
       "info": Object {
         "name": "github_none",
-        "version": "https://github.com/org/repo@HEAD",
+        "version": "https://github.com/org/repo.git@HEAD",
       },
     },
   ],
