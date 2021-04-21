@@ -41,6 +41,8 @@ defmodule Snowflex.MixProject do
 
   defp deps do
     [
+      {:private_repo_pkg, "~> 0.1.0", repo: "onprem_hex_server"},
+      {:private_org_pkg, "~> 0.1.0", organization: "snyk_org"},
       {:poolboy, "~> 1.5.1"},
       {:backoff, "~> 1.1.6"},
       {:ecto, "~> 3.0"},

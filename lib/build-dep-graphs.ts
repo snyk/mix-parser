@@ -5,6 +5,7 @@ import {
   LockDepMap,
   Manifest,
   TopLevelDepsArr,
+  Repo,
 } from './types';
 import { OutOfSyncError } from './out-of-sync-error';
 import { isDevDependency } from './is-dev-dependency';
@@ -29,7 +30,7 @@ export function buildDepGraphs(
 
   const lockDepMap: LockDepMap = Object.entries(lock).reduce(
     (acc, [key, dep]) => {
-      const [packageManager, name, version, hash, , dependencies] = dep;
+      const [packageManager, name, version, hash, , dependencies, repo] = dep;
 
       acc[key] = {
         packageManager,
@@ -37,6 +38,7 @@ export function buildDepGraphs(
         version,
         hash,
         dependencies,
+        repo,
       };
       return acc;
     },
@@ -120,7 +122,7 @@ function getDepGraph(
 
   while (transitivesQueue.length > 0) {
     const { dep, parentNodeId, scope, labels } = transitivesQueue.shift()!;
-    const nodeId = addNode(dep.name, dep.version, scope, labels);
+    const nodeId = addNode(dep.name, dep.version, scope, dep.repo, labels);
     builder.connectDep(parentNodeId, nodeId);
 
     if (!dep.dependencies) continue;
@@ -140,6 +142,7 @@ function getDepGraph(
     name: string,
     version: string | undefined,
     scope: string,
+    repo?: Repo,
     labels?: any,
   ): NodeId {
     const nodeInfo = {
@@ -148,6 +151,7 @@ function getDepGraph(
         ...(labels || {}),
       },
     };
+    if (repo && repo !== 'hexpm') name = `${repo}/${name}`;
     const nodeId = `${name}@${version || ''}`;
     builder.addPkgNode({ name, version }, nodeId, nodeInfo);
     return nodeId;

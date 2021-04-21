@@ -1,4 +1,5 @@
 {
+  "apps": null,
   "lock": [
     {
       "backoff": [
@@ -154,6 +155,30 @@
         "hexpm",
         "f5e2c4702468b2fd11b10d39416ddadd2fcdd173ba2a0285ebd92c39827a5a16"
       ],
+      "gen_state_machine": [
+        "hex",
+        "gen_state_machine",
+        "3.0.0",
+        "1e57f86a494e5c6b14137ebef26a7eb342b3b0070c7135f2d6768ed3f6b6cdff",
+        [
+          "mix"
+        ],
+        [],
+        "hexpm",
+        "0a59652574bebceb7309f6b749d2a41b45fdeda8dbb4da0791e355dd19f0ed15"
+      ],
+      "list_to_csv": [
+        "hex",
+        "list_to_csv",
+        "0.1.0",
+        "24b7a1f4e97da08a3c217e65733ddeaf7d20fa6f0b442f9b3f74d3156dbd466b",
+        [
+          "mix"
+        ],
+        [],
+        "onprem_hex_server",
+        "9ae8d701ec1fe5cfc4e14c693eabae04ded9135d1797b8a57f80b6cfffae027a"
+      ],
       "makeup": [
         "hex",
         "makeup",
@@ -243,6 +268,50 @@
         "hexpm",
         "dad79704ce5440f3d5a3681c8590b9dc25d1a561e8f5a9c995281012860901e3"
       ],
+      "private_org_pkg": [
+        "hex",
+        "private_org_pkg",
+        "0.1.0",
+        "b5ac51e588eeef6d7f0c9dd69cd14d4c1df6ff55e1435638534a7f4d3e966a7c",
+        [
+          "mix"
+        ],
+        [
+          [
+            "ecto",
+            "~> 3.0",
+            {
+              "hex": "ecto",
+              "repo": "hexpm",
+              "optional": false
+            }
+          ]
+        ],
+        "hexpm:snyk_org",
+        "56ad67b6ba44965a3fefc9f8e9b69235008fdf65b52a5444ebcd4655f028589d"
+      ],
+      "private_repo_pkg": [
+        "hex",
+        "private_repo_pkg",
+        "0.1.0",
+        "1628ed82407e0f0b6b2aaa80f6e4fa43115dbe1de3be446229ca4ed89dc8b2e3",
+        [
+          "mix"
+        ],
+        [
+          [
+            "gen_state_machine",
+            "~> 3.0",
+            {
+              "hex": "gen_state_machine",
+              "repo": "hexpm",
+              "optional": false
+            }
+          ]
+        ],
+        "onprem_hex_server",
+        "6f309720ee1414bc5adc2c43168698dc981aa29f8fe8d8330e1e74da2004001d"
+      ],
       "telemetry": [
         "hex",
         "telemetry",
@@ -264,6 +333,20 @@
     "elixir": "~> 1.9",
     "start_permanent": false,
     "deps": [
+      [
+        "private_repo_pkg",
+        "~> 0.1.0",
+        {
+          "repo": "onprem_hex_server"
+        }
+      ],
+      [
+        "private_org_pkg",
+        "~> 0.1.0",
+        {
+          "organization": "snyk_org"
+        }
+      ],
       [
         "poolboy",
         "~> 1.5.1"
@@ -322,5 +405,6 @@
     },
     "name": "Snowflex",
     "module_name": "Snowflex.MixProject"
-  }
+  },
+  "parent_umbrella_manifest": null
 }
