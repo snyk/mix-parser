@@ -39,6 +39,7 @@ export type LockDepBase = {
   name: DepName;
   version: DepVersion;
   dependencies?: Dependency[];
+  repo?: Repo;
 };
 type LockDep = LockDepBase & {
   packageManager: PackageManager;
@@ -65,7 +66,7 @@ type DepVersion = string;
 type DepVersionSpec = string;
 type DepHash = string;
 type DepHash2 = string;
-type Repo = 'hexpm';
+export type Repo = 'hexpm' | string; // The default repo is `hexpm`.
 
 type Environment = 'dev' | 'test' | 'prod';
 
