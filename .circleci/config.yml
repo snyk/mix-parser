@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
   node: circleci/node@2.1.1
-  prodsec: snyk/prodsec-orb@1.0
+  prodsec: snyk/prodsec-orb@1
 
 defaults: &defaults
   resource_class: small
   docker:
-    - image: node:12
+    - image: cimg/node:12.22
 
 commands:
   setup_snyk_user:
@@ -16,6 +16,21 @@ commands:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
 
 jobs:
+  security-scans:
+    <<: *defaults
+    resource_class: small
+    steps:
+      - checkout
+      - setup_snyk_user
+      - node/install-packages:
+          override-ci: true
+          cache-key: package.json
+      - prodsec/security_scans:
+          mode: auto
+          release-branch: master
+          open-source-additional-arguments: exclude=test
+          iac-scan: disabled
+
   test:
     <<: *defaults
     steps:
@@ -68,6 +83,16 @@ workflows:
               ignore:
                 - master
 
+      - security-scans:
+          name: Security Scans
+          context:
+            - open_source-managed
+            - nodejs-install
+          filters:
+            branches:
+              ignore:
+                - master
+
       - test:
           name: Test
           context: nodejs-install
@@ -77,6 +102,14 @@ workflows:
                 - master
   release:
     jobs:
+      - security-scans:
+          name: Security Scans
+          context: open_source-managed
+          filters:
+            branches:
+              only:
+                - master
+
       - release:
           name: Release
           context: nodejs-lib-release
