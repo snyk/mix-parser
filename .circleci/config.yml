@@ -6,7 +6,7 @@ orbs:
 defaults: &defaults
   resource_class: small
   docker:
-    - image: node:12
+    - image: cimg/node:20.14
 
 commands:
   setup_snyk_user:
