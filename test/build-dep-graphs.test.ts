@@ -17,7 +17,8 @@ describe('buildDepGraphs', () => {
     verifyFixture('non-hex', false, 'all');
 
     describe('out-of-sync-top-level should throw', () => {
-      const mixJsonResult = require('./fixtures/out-of-sync-top-level/mix-result.json') as MixJsonResult;
+      const mixJsonResult =
+        require('./fixtures/out-of-sync-top-level/mix-result.json') as MixJsonResult;
       verifyThrowsError(
         'out-of-sync-top-level throws',
         mixJsonResult,
@@ -27,7 +28,8 @@ describe('buildDepGraphs', () => {
       );
     });
     describe('out-of-sync-transitive should throw', () => {
-      const mixJsonResult = require('./fixtures/out-of-sync-transitive/mix-result.json') as MixJsonResult;
+      const mixJsonResult =
+        require('./fixtures/out-of-sync-transitive/mix-result.json') as MixJsonResult;
       verifyThrowsError(
         'out-of-sync-transitive throws',
         mixJsonResult,
@@ -53,7 +55,9 @@ function verifyFixture(
     allProjects === 'all' ? [true, false] : [allProjects as boolean];
 
   describe(name, () => {
-    const mixJsonResult = require(`./fixtures/${name}/mix-result.json`) as MixJsonResult;
+    const mixJsonResult = require(
+      `./fixtures/${name}/mix-result.json`,
+    ) as MixJsonResult;
     for (const includeDev of includeDevOptions) {
       for (const strict of strictOptions) {
         for (const allProjects of allProjectsOptions) {
