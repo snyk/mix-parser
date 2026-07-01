@@ -1,13 +1,19 @@
 {
   "name": "@snyk/mix-parser",
   "description": "Snyk's Mix Parser",
-  "homepage": "https://github.com/snyk/mix-parser",
+  "homepage": "https://github.com/snyk/mix-parser#readme",
+  "bugs": {
+    "url": "https://github.com/snyk/mix-parser/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/snyk/mix-parser"
+    "url": "https://github.com/snyk/mix-parser.git"
   },
   "author": "snyk.io",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=10"
   },

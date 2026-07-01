@@ -9,3 +9,8 @@ package-lock.json
 yarn.lock
 .eslintcache
 .idea
+
+# IDE
+/.idea/
+/.vscode/
+/.cursor/
