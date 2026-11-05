@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@2.1.1
+  node: circleci/node@7
   prodsec: snyk/prodsec-orb@1
 
 defaults: &defaults
@@ -29,8 +29,8 @@ jobs:
       - checkout
       - setup_snyk_user
       - node/install-packages:
-          override-ci: true
-          cache-key: package.json
+          override-ci-command: npm install
+          cache-only-lockfile: false
       - prodsec/security_scans:
           mode: auto
           release-branch: master
@@ -44,8 +44,8 @@ jobs:
       - setup_snyk_user
       - install_deps
       - node/install-packages:
-          override-ci: true
-          cache-key: package.json
+          override-ci-command: npm install
+          cache-only-lockfile: false
       - run:
           name: Lint
           command: npm run lint
