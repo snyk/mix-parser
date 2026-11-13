@@ -21,7 +21,7 @@ commands:
     steps:
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
 
 jobs:
   security-scans:
@@ -31,7 +31,7 @@ jobs:
       - checkout
       - setup_snyk_user
       - node/install-packages:
-          override-ci-command: npm install
+          override-ci-command: npm ci
           cache-only-lockfile: false
       - prodsec/security_scans:
           mode: auto
@@ -48,7 +48,7 @@ jobs:
       - setup_snyk_user
       - install_deps
       - node/install-packages:
-          override-ci-command: npm install
+          override-ci-command: npm ci
           cache-only-lockfile: false
       - run:
           name: Lint
