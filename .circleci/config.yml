@@ -54,9 +54,6 @@ jobs:
           name: Lint
           command: npm run lint
       - run:
-          name: Install JUnit coverage reporter
-          command: npm install --no-save jest-junit
-      - run:
           name: Run tests with JUnit as reporter
           command: npx jest --coverage --ci --maxWorkers=3 --reporters=default --reporters=jest-junit
           environment:
