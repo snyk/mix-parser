@@ -21,7 +21,7 @@ commands:
     steps:
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
 
 jobs:
   security-scans:
@@ -30,9 +30,7 @@ jobs:
     steps:
       - checkout
       - setup_snyk_user
-      - node/install-packages:
-          override-ci-command: npm install
-          cache-only-lockfile: false
+      - node/install-packages
       - prodsec/security_scans:
           mode: auto
           release-branch: master
@@ -47,15 +45,10 @@ jobs:
       - checkout
       - setup_snyk_user
       - install_deps
-      - node/install-packages:
-          override-ci-command: npm install
-          cache-only-lockfile: false
+      - node/install-packages
       - run:
           name: Lint
           command: npm run lint
-      - run:
-          name: Install JUnit coverage reporter
-          command: npm install --no-save jest-junit
       - run:
           name: Run tests with JUnit as reporter
           command: npx jest --coverage --ci --maxWorkers=3 --reporters=default --reporters=jest-junit
