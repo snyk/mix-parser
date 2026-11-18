@@ -30,9 +30,7 @@ jobs:
     steps:
       - checkout
       - setup_snyk_user
-      - node/install-packages:
-          override-ci-command: npm ci
-          cache-only-lockfile: false
+      - node/install-packages
       - prodsec/security_scans:
           mode: auto
           release-branch: master
@@ -47,9 +45,7 @@ jobs:
       - checkout
       - setup_snyk_user
       - install_deps
-      - node/install-packages:
-          override-ci-command: npm ci
-          cache-only-lockfile: false
+      - node/install-packages
       - run:
           name: Lint
           command: npm run lint
